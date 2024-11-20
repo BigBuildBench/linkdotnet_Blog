@@ -1,0 +1,44 @@
+@using Blazorise.Markdown
+@inject IJSRuntime JsRuntime
+
+<Markdown ElementId="@Id"
+          Placeholder="@Placeholder"
+          Class="@Class"
+          Value="@Value"
+          ValueChanged="s => Value = s"
+          MaxHeight="@Height"
+          PreviewImagesInEditor="true"/>
+
+@code {
+    private string textContent = string.Empty;
+
+    private string Height => $"{Rows * 25}px";
+
+#pragma warning disable BL0007
+    [Parameter]
+    public string Value
+    {
+        get => textContent;
+        set
+        {
+            if (textContent != value)
+            {
+                textContent = value;
+                ValueChanged.InvokeAsync(value);
+            }
+        }
+    }
+#pragma warning restore
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+
+    [Parameter] public string Class { get; set; } = string.Empty;
+
+    [Parameter] public string Id { get; set; } = string.Empty;
+
+    [Parameter]
+    public int Rows { get; set; }
+
+    [Parameter] public string Placeholder { get; set; } = string.Empty;
+}
