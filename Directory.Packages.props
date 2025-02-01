@@ -36,7 +36,7 @@
     <PackageVersion Include="bunit" Version="2.0.24-preview" />
     <PackageVersion Include="bunit.generators" Version="2.0.24-preview" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <PackageVersion Include="coverlet.collector" Version="6.0.2" />
-    <PackageVersion Include="coverlet.msbuild" Version="6.0.2" />
+    <PackageVersion Include="coverlet.msbuild" Version="6.0.4" />
     <PackageVersion Include="xunit.v3" Version="0.4.0-pre.20" />
 		<PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0-pre.35" />
   </ItemGroup>
